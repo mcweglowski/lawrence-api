@@ -16,7 +16,7 @@ class ModelTests(TestCase):
 
         self.assertEqual(str(author), f"{first_name} {last_name}")
 
-    def test_auth_str_when_display_name_provided(self):
+    def test_author_str_when_display_name_provided(self):
         first_name = "John"
         last_name = "Tolkien"
         display_name = "John R. R. Tolkien"
