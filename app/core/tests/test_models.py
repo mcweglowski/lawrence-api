@@ -10,9 +10,8 @@ class ModelTests(TestCase):
         last_name = "Tolkien"
 
         author = models.Author.objects.create(
-            first_name = first_name,
-            last_name = last_name
-        )
+            first_name=first_name,
+            last_name=last_name)
 
         self.assertEqual(str(author), f"{first_name} {last_name}")
 
@@ -22,9 +21,8 @@ class ModelTests(TestCase):
         display_name = "John R. R. Tolkien"
 
         author = models.Author.objects.create(
-            first_name = first_name,
-            last_name = last_name,
-            display_name = display_name
-        )
+            first_name=first_name,
+            last_name=last_name,
+            display_name=display_name)
 
         self.assertEqual(str(author), display_name)
