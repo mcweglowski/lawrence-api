@@ -9,6 +9,6 @@ class Author(models.Model):
     date_of_death   = models.DateField(null=True)
 
     def __str__(self):
-        if self.display_name is None:
-            return f"{self.first_name} {self.last_name}"
-        return self.display_name
+        if self.display_name:
+            return self.display_name            
+        return f"{self.first_name} {self.last_name}"
