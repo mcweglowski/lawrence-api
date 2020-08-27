@@ -26,3 +26,23 @@ class ModelTests(TestCase):
             display_name=display_name)
 
         self.assertEqual(str(author), display_name)
+
+    def test_book_str_when_no_year_provided(self):
+        title = "The Lord of the Rings"
+
+        book = models.Book.objects.create(
+            title=title
+        )
+
+        self.assertEqual(str(book), title)
+
+    def test_book_str_when_year_provided(self):
+        title = "The Lord of the Rings"
+        publishing_year = 1954
+
+        book = models.Book.objects.create(
+            title=title,
+            publishing_year=publishing_year
+        )
+
+        self.assertEqual(str(book), f"{title}({publishing_year})")

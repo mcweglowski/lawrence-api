@@ -12,3 +12,15 @@ class Author(models.Model):
         if self.display_name:
             return self.display_name
         return f"{self.first_name} {self.last_name}"
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=255)
+    publishing_year = models.PositiveSmallIntegerField(null=True)
+    isbn = models.PositiveBigIntegerField()
+    authors = models.ManyToManyField(Author)
+
+    def __str__(self):
+        if self.publishing_year:
+            return f"{self.title}({self.publishing_year})"
+        return self.title
