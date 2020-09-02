@@ -31,7 +31,8 @@ class ModelTests(TestCase):
         title = "The Lord of the Rings"
 
         book = models.Book.objects.create(
-            title=title
+            title=title,
+            isbn=0
         )
 
         self.assertEqual(str(book), title)
@@ -42,7 +43,8 @@ class ModelTests(TestCase):
 
         book = models.Book.objects.create(
             title=title,
-            publishing_year=publishing_year
+            publishing_year=publishing_year,
+            isbn=0
         )
 
         self.assertEqual(str(book), f"{title}({publishing_year})")
