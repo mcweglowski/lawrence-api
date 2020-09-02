@@ -17,7 +17,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=255)
     publishing_year = models.PositiveSmallIntegerField(null=True)
-    isbn = models.PositiveBigIntegerField()
+    isbn = models.PositiveBigIntegerField(default=None)
     authors = models.ManyToManyField(Author)
 
     def __str__(self):
