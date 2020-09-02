@@ -1,6 +1,6 @@
-from core.models import Author, Book
 from book.serializers import AuthorSerializer, BookSerializer
 
+from core.models import Author, Book
 
 from rest_framework import viewsets
 

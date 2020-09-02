@@ -1,10 +1,13 @@
 from datetime import date
-from django.test import TestCase
-from rest_framework import status
-from rest_framework.test import APIClient
 
 from book.serializers import AuthorSerializer
+
 from core.models import Author
+
+from django.test import TestCase
+
+from rest_framework import status
+from rest_framework.test import APIClient
 
 
 AUTHOR_URL = "/api/author/"
