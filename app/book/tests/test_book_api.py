@@ -1,7 +1,8 @@
+import collections
+
 from book.serializers import BookSerializer
 
 from core.models import Book
-import collections
 
 from django.test import TestCase
 
@@ -14,6 +15,7 @@ BOOK_URL = "/api/book/books/"
 
 def detail_url(id):
     return f"{BOOK_URL}{id}/"
+
 
 def title_url(title):
     return f"{BOOK_URL}?title={title}"
@@ -59,7 +61,6 @@ class BookAPITests(TestCase):
         res = self.client.get(title_url(self.book1.title))
 
         serializer = BookSerializer(self.book1, many=False)
-        
         expected = [collections.OrderedDict(serializer.data)]
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
