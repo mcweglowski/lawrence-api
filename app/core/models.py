@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class CharacterRace(models.Model):
+    name = models.CharField(max_length=255)
+
+
+class Character(models.Model):
+    first_name = models.CharField(max_length=255)
+    middle_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    race = models.ForeignKey(CharacterRace, on_delete=models.PROTECT)
+
+
 class Author(models.Model):
     first_name = models.CharField(max_length=255, null=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
@@ -19,6 +30,7 @@ class Book(models.Model):
     publishing_year = models.PositiveSmallIntegerField(null=True)
     isbn = models.CharField(max_length=13)
     authors = models.ManyToManyField(Author)
+    characters = models.ManyToManyField(Character)
 
     def __str__(self):
         if self.publishing_year:
