@@ -11,8 +11,11 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
-    # def get_queryset(self):
-    #     return queryset
+    def get_queryset(self):
+        title = self.request.query_params.get('title', None)
+        if title is not None:
+            self.queryset = self.queryset.filter(title=title)
+        return self.queryset
 
 
 class AuthorViewSet(viewsets.ModelViewSet):
