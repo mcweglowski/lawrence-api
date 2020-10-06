@@ -10,7 +10,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 
-AUTHOR_URL = "/api/author/"
+AUTHOR_URL = "/api/book/authors/"
 
 
 def detail_url(id):

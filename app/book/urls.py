@@ -7,8 +7,8 @@ from rest_framework import routers
 
 
 router = routers.DefaultRouter()
-router.register(r'book', views.BookViewSet)
-router.register(r'author', views.AuthorViewSet)
+router.register(r'books', views.BookViewSet)
+router.register(r'authors', views.AuthorViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 
-BOOK_URL = "/api/book/"
+BOOK_URL = "/api/book/books/"
 
 
 def detail_url(id):

@@ -3,7 +3,7 @@ from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APIClient
 
-HELLO_WORLD_URL = '/api/hello-world/'
+HELLO_WORLD_URL = '/api/book/hello-world'
 
 
 class HelloWorldTest(TestCase):

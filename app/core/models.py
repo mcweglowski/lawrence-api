@@ -3,10 +3,10 @@ from django.db import models
 
 class Author(models.Model):
     first_name = models.CharField(max_length=255, null=True)
-    last_name = models.CharField(max_length=255, null=True)
-    display_name = models.CharField(max_length=255, null=True)
-    date_of_birth = models.DateField(null=True)
-    date_of_death = models.DateField(null=True)
+    last_name = models.CharField(max_length=255, null=True, blank=True)
+    display_name = models.CharField(max_length=255, null=True, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    date_of_death = models.DateField(null=True, blank=True)
 
     def __str__(self):
         if self.display_name:
